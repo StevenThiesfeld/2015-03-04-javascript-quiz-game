@@ -25,7 +25,7 @@ function getAnswer(question){
 }
 
 function checkAnswer(answer,rightAnswer){
-  if (answer === rightAnswer) {
+  if (answer.toLowerCase() === rightAnswer.toLowerCase()) {
     score++;
     alert("That answer is correct!\n" + "Your Score is "+score);
   } else {
