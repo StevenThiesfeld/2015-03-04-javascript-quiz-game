@@ -18,18 +18,23 @@ function getAnswer(question){
 function checkAnswer(answer,rightAnswer){
   if (answer === rightAnswer) {
     score++;
-    alert("That answer is correct!");
+    alert("That answer is correct!\n" + "Your Score is "+score);
   } else {
-    alert("Sorry, That is incorrect.");
+    alert("Sorry, That is incorrect.\n"+"Your Score is "+score);
   }
 }
 
 function playGame(){
-  var temp = randomize($questions)
+  var temp = randomize($questions);
   for (z = 0; z < $questions.length; z++){
     getAnswer(temp[z]);
   }
-  return score;
+  showScore();
+}
+
+function showScore(){
+  alert("Game Over, you answered " + score + " out of " + $questions.length+"\n"
+  + "Your score is " + (score / $questions.length * 100)+ "%");
 }
 
 function randomize(array){
